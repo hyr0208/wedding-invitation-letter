@@ -2,6 +2,8 @@
 
 모던하고 심플하면서 따뜻한 톤의 모바일 청첩장 샘플입니다. React + Vite + TypeScript + Tailwind CSS로 만들었습니다.
 
+🔗 **배포 주소**: [wedding.yyyerin.co.kr](https://wedding.yyyerin.co.kr)
+
 ## 구성
 
 - 커버(첫 화면), 모시는 글, 본문 포토 섹션, 연락하기, 예식 일시(캘린더/D-day), 갤러리, 오시는 길, 마음 전하실 곳, 클로징으로 구성된 한 페이지 청첩장입니다.
@@ -25,3 +27,10 @@ npm run preview  # 빌드 결과 미리보기
 - React 19 + TypeScript
 - Vite
 - Tailwind CSS v4
+
+## 배포
+
+Cloudflare Pages에서 `main` 브랜치를 자동 빌드/배포합니다. `main`에 push하면 몇 분 내로 [wedding.yyyerin.co.kr](https://wedding.yyyerin.co.kr)에 반영됩니다.
+
+- Build command: `npm run build`
+- Build output directory: `dist`
