@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Section } from './Section'
 import gallery1 from '../assets/photos/gallery-1.jpg'
 import gallery2 from '../assets/photos/gallery-2.jpg'
@@ -33,50 +34,52 @@ export function Gallery() {
         ))}
       </div>
 
-      {active !== null && (
-        <div
-          className="animate-fade-in fixed inset-0 z-50 flex items-center justify-center bg-ink/80 px-6"
-          onClick={close}
-        >
-          <img
-            key={active}
-            src={PHOTOS[active]}
-            alt=""
-            className="animate-scale-in max-h-[80vh] w-full max-w-[320px] object-cover"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <button
-            type="button"
-            aria-label="이전 사진"
-            onClick={(e) => {
-              e.stopPropagation()
-              show(-1)
-            }}
-            className="absolute left-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-ink"
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            aria-label="다음 사진"
-            onClick={(e) => {
-              e.stopPropagation()
-              show(1)
-            }}
-            className="absolute right-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-ink"
-          >
-            ›
-          </button>
-          <button
-            type="button"
-            aria-label="닫기"
+      {active !== null &&
+        createPortal(
+          <div
+            className="animate-fade-in fixed inset-0 z-50 flex items-center justify-center bg-ink"
             onClick={close}
-            className="absolute top-6 right-6 flex h-9 w-9 items-center justify-center bg-cream/90 text-ink"
           >
-            ✕
-          </button>
-        </div>
-      )}
+            <img
+              key={active}
+              src={PHOTOS[active]}
+              alt=""
+              className="animate-scale-in h-full w-full object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              type="button"
+              aria-label="이전 사진"
+              onClick={(e) => {
+                e.stopPropagation()
+                show(-1)
+              }}
+              className="absolute left-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-ink"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              aria-label="다음 사진"
+              onClick={(e) => {
+                e.stopPropagation()
+                show(1)
+              }}
+              className="absolute right-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-ink"
+            >
+              ›
+            </button>
+            <button
+              type="button"
+              aria-label="닫기"
+              onClick={close}
+              className="absolute top-6 right-6 flex h-9 w-9 items-center justify-center bg-cream/90 text-ink"
+            >
+              ✕
+            </button>
+          </div>,
+          document.body,
+        )}
     </Section>
   )
 }
