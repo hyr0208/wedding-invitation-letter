@@ -3,6 +3,7 @@ import type { InvitationData } from '../types'
 export const invitation: InvitationData = {
   groom: {
     name: '이지훈',
+    shortName: '지훈',
     role: '신랑',
     parents: {
       father: '이성민',
@@ -14,6 +15,7 @@ export const invitation: InvitationData = {
   },
   bride: {
     name: '김서연',
+    shortName: '서연',
     role: '신부',
     parents: {
       father: '김도현',

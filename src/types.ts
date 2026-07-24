@@ -7,6 +7,7 @@ export interface Parents {
 
 export interface PersonInfo {
   name: string
+  shortName: string
   role: '신랑' | '신부'
   parents: Parents
   phone: string

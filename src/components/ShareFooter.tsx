@@ -40,8 +40,8 @@ export function ShareFooter({ data }: ShareFooterProps) {
           </button>
         </div>
 
-        <p className="mt-10 text-xs text-cream/70">
-          {data.groom.name} · {data.bride.name}
+        <p className="font-serif-en mt-10 text-sm tracking-wide text-cream/70">
+          {data.groom.shortName} ෆ {data.bride.shortName}
         </p>
         <p className="mt-1 text-[11px] text-cream/50">이 페이지는 샘플로 제작되었습니다.</p>
       </div>
