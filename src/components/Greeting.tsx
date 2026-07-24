@@ -1,17 +1,17 @@
-import { Section } from './Section'
-import { Divider } from './Divider'
-import type { InvitationData } from '../types'
+import { Section } from "./Section";
+import { Divider } from "./Divider";
+import type { InvitationData } from "../types";
 
 interface GreetingProps {
-  data: InvitationData
+  data: InvitationData;
 }
 
 export function Greeting({ data }: GreetingProps) {
   return (
     <Section eyebrow="Invitation" title="모시는 글">
-      <div className="mx-auto max-w-xs space-y-1.5 text-center text-[15px] leading-loose text-ink-soft">
+      <div className="mx-auto max-w-xs space-y-1.5 text-center text-[15px] leading-loose text-ink-soft mb-4">
         {data.greeting.map((line, index) =>
-          line === '' ? (
+          line === "" ? (
             <div key={index} className="h-2" />
           ) : (
             <p key={index}>{line}</p>
@@ -29,7 +29,9 @@ export function Greeting({ data }: GreetingProps) {
           <p className="mt-1.5 text-sm text-ink-soft">
             {data.groom.parents.father} · {data.groom.parents.mother}의 아들
           </p>
-          <p className="font-serif-kr mt-1 text-xl font-medium text-ink">{data.groom.name}</p>
+          <p className="font-serif-kr mt-1 text-xl font-medium text-ink">
+            {data.groom.name}
+          </p>
         </div>
 
         <span className="h-px w-10 bg-line" />
@@ -41,9 +43,11 @@ export function Greeting({ data }: GreetingProps) {
           <p className="mt-1.5 text-sm text-ink-soft">
             {data.bride.parents.father} · {data.bride.parents.mother}의 딸
           </p>
-          <p className="font-serif-kr mt-1 text-xl font-medium text-ink">{data.bride.name}</p>
+          <p className="font-serif-kr mt-1 text-xl font-medium text-ink">
+            {data.bride.name}
+          </p>
         </div>
       </div>
     </Section>
-  )
+  );
 }
