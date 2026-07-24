@@ -1,6 +1,7 @@
 import { invitation } from './data/invitation'
 import { Cover } from './components/Cover'
 import { Greeting } from './components/Greeting'
+import { PhotoMoment } from './components/PhotoMoment'
 import { Couple } from './components/Couple'
 import { DateInfo } from './components/DateInfo'
 import { Gallery } from './components/Gallery'
@@ -14,6 +15,7 @@ function App() {
       <div className="mx-auto min-h-svh w-full max-w-[430px] bg-cream shadow-none sm:min-h-0 sm:rounded-3xl sm:shadow-xl">
         <Cover data={invitation} />
         <Greeting data={invitation} />
+        <PhotoMoment caption="Our story continues together" />
         <Couple data={invitation} />
         <DateInfo data={invitation} />
         <Gallery />

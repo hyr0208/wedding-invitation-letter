@@ -28,7 +28,7 @@ export function Gallery() {
             key={i}
             type="button"
             onClick={() => setActive(i)}
-            className={`flex aspect-3/4 items-center justify-center rounded-lg bg-gradient-to-br ${TONES[i]} text-xs text-ink-faint transition-transform active:scale-95`}
+            className={`flex aspect-3/4 items-center justify-center rounded-lg bg-linear-to-br ${TONES[i]} text-xs text-ink-faint transition-transform active:scale-95`}
           >
             {String(i + 1).padStart(2, '0')}
           </button>
@@ -41,7 +41,7 @@ export function Gallery() {
           onClick={close}
         >
           <div
-            className={`flex aspect-3/4 w-full max-w-[280px] items-center justify-center rounded-xl bg-gradient-to-br text-4xl font-light text-cream ${TONES[active]}`}
+            className={`flex aspect-3/4 w-full max-w-[280px] items-center justify-center rounded-xl bg-linear-to-br text-4xl font-light text-cream ${TONES[active]}`}
             onClick={(e) => e.stopPropagation()}
           >
             {String(active + 1).padStart(2, '0')}
