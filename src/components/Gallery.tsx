@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { Section } from './Section'
+import gallery1 from '../assets/photos/gallery-1.jpg'
+import gallery2 from '../assets/photos/gallery-2.jpg'
+import gallery3 from '../assets/photos/gallery-3.jpg'
+import gallery4 from '../assets/photos/gallery-4.jpg'
+import gallery5 from '../assets/photos/gallery-5.jpg'
+import gallery6 from '../assets/photos/gallery-6.jpg'
 
-const PHOTO_COUNT = 6
-const TONES = [
-  'from-terracotta-soft to-cream-deep',
-  'from-cream-deep to-terracotta-soft',
-  'from-sage/30 to-cream-deep',
-  'from-cream-deep to-sage/30',
-  'from-terracotta-soft to-cream-soft',
-  'from-cream-soft to-terracotta-soft',
-]
+const PHOTOS = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6]
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null)
@@ -17,20 +15,20 @@ export function Gallery() {
   const close = () => setActive(null)
   const show = (delta: number) => {
     if (active === null) return
-    setActive((active + delta + PHOTO_COUNT) % PHOTO_COUNT)
+    setActive((active + delta + PHOTOS.length) % PHOTOS.length)
   }
 
   return (
     <Section eyebrow="Gallery" title="우리의 순간">
       <div className="grid grid-cols-3 gap-1.5">
-        {Array.from({ length: PHOTO_COUNT }, (_, i) => (
+        {PHOTOS.map((photo, i) => (
           <button
-            key={i}
+            key={photo}
             type="button"
             onClick={() => setActive(i)}
-            className={`flex aspect-3/4 items-center justify-center rounded-lg bg-linear-to-br ${TONES[i]} text-xs text-ink-faint transition-transform active:scale-95`}
+            className="aspect-3/4 overflow-hidden rounded-lg transition-transform active:scale-95"
           >
-            {String(i + 1).padStart(2, '0')}
+            <img src={photo} alt="" className="h-full w-full object-cover" />
           </button>
         ))}
       </div>
@@ -40,12 +38,12 @@ export function Gallery() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 px-6"
           onClick={close}
         >
-          <div
-            className={`flex aspect-3/4 w-full max-w-[280px] items-center justify-center rounded-xl bg-linear-to-br text-4xl font-light text-cream ${TONES[active]}`}
+          <img
+            src={PHOTOS[active]}
+            alt=""
+            className="max-h-[80vh] w-full max-w-[320px] rounded-xl object-cover"
             onClick={(e) => e.stopPropagation()}
-          >
-            {String(active + 1).padStart(2, '0')}
-          </div>
+          />
           <button
             type="button"
             aria-label="이전 사진"
