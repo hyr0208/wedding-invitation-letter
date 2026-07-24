@@ -12,6 +12,7 @@
   - `cover-bg.jpg` — 커버 배경
   - `moment.jpg` — 본문 중간 풀와이드 사진
   - `gallery-1.jpg` ~ `gallery-6.jpg` — 갤러리 그리드
+- 카카오톡 등에 링크를 공유할 때 보이는 미리보기 이미지는 [public/og-image.jpg](public/og-image.jpg)(1200x630)이며, `index.html`의 `og:*`/`twitter:*` 메타 태그에서 참조합니다.
 
 ## 실행
 
