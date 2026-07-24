@@ -51,17 +51,27 @@ function AccountGroup({ side, accounts }: { side: string; accounts: AccountInfo[
         className="flex w-full items-center justify-between bg-cream px-5 py-4 text-sm font-medium text-ink"
       >
         {side}
-        <span className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}>
+        <span className={`transition-transform duration-300 ease-out ${open ? 'rotate-180' : ''}`}>
           ⌄
         </span>
       </button>
-      {open && (
-        <div className="divide-y divide-line/70 bg-cream-soft px-5">
-          {accounts.map((account) => (
-            <AccountRow key={`${account.label}-${account.number}`} account={account} />
-          ))}
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div
+            className={`divide-y divide-line/70 bg-cream-soft px-5 transition-opacity duration-300 ${
+              open ? 'opacity-100 delay-100' : 'opacity-0'
+            }`}
+          >
+            {accounts.map((account) => (
+              <AccountRow key={`${account.label}-${account.number}`} account={account} />
+            ))}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   )
 }

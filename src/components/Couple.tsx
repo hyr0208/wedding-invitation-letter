@@ -66,10 +66,20 @@ function CoupleCard({ person }: { person: PersonInfo }) {
       <p className="font-serif-en text-[11px] tracking-[0.25em] text-terracotta uppercase">
         {person.role === '신랑' ? 'Groom' : 'Bride'}
       </p>
-      <div className="mt-3 divide-y divide-line/70">
+      <div className="mt-3">
         <PersonRow label={person.role} name={person.name} phone={person.phone} />
-        {expanded && (
-          <>
+      </div>
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+          expanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div
+            className={`divide-y divide-line/70 border-t border-line/70 transition-opacity duration-300 ${
+              expanded ? 'opacity-100 delay-100' : 'opacity-0'
+            }`}
+          >
             <PersonRow
               label="아버지"
               name={person.parents.father}
@@ -80,8 +90,8 @@ function CoupleCard({ person }: { person: PersonInfo }) {
               name={person.parents.mother}
               phone={person.parents.motherPhone}
             />
-          </>
-        )}
+          </div>
+        </div>
       </div>
       <button
         type="button"

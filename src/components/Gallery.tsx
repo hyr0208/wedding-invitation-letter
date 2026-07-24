@@ -35,13 +35,14 @@ export function Gallery() {
 
       {active !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 px-6"
+          className="animate-fade-in fixed inset-0 z-50 flex items-center justify-center bg-ink/80 px-6"
           onClick={close}
         >
           <img
+            key={active}
             src={PHOTOS[active]}
             alt=""
-            className="max-h-[80vh] w-full max-w-[320px] object-cover"
+            className="animate-scale-in max-h-[80vh] w-full max-w-[320px] object-cover"
             onClick={(e) => e.stopPropagation()}
           />
           <button
