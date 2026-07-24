@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { copyText } from '../utils/clipboard'
 import type { InvitationData } from '../types'
+import closingPhoto from '../assets/photos/gallery-3.jpg'
 
 interface ShareFooterProps {
   data: InvitationData
@@ -18,27 +19,32 @@ export function ShareFooter({ data }: ShareFooterProps) {
   }
 
   return (
-    <footer className="border-t border-line bg-cream px-6 py-14 text-center">
-      <p className="font-serif-kr text-[15px] leading-relaxed text-ink">
-        저희의 새로운 시작을
-        <br />
-        축하해 주셔서 감사합니다.
-      </p>
+    <footer className="relative overflow-hidden px-6 py-20 text-center">
+      <img src={closingPhoto} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-linear-to-b from-ink/70 via-ink/55 to-ink/80" />
 
-      <div className="mt-8 flex justify-center">
-        <button
-          type="button"
-          onClick={handleCopyLink}
-          className="rounded-full bg-terracotta px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-terracotta-dark"
-        >
-          {copied ? '링크가 복사되었습니다' : '청첩장 링크 복사하기'}
-        </button>
+      <div className="relative">
+        <p className="font-serif-kr text-[15px] leading-relaxed text-cream">
+          저희의 새로운 시작을
+          <br />
+          축하해 주셔서 감사합니다.
+        </p>
+
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={handleCopyLink}
+            className="bg-terracotta px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-terracotta-dark"
+          >
+            {copied ? '링크가 복사되었습니다' : '청첩장 링크 복사하기'}
+          </button>
+        </div>
+
+        <p className="mt-10 text-xs text-cream/70">
+          {data.groom.name} · {data.bride.name}
+        </p>
+        <p className="mt-1 text-[11px] text-cream/50">이 페이지는 샘플로 제작되었습니다.</p>
       </div>
-
-      <p className="mt-10 text-xs text-ink-faint">
-        {data.groom.name} · {data.bride.name}
-      </p>
-      <p className="mt-1 text-[11px] text-ink-faint">이 페이지는 샘플로 제작되었습니다.</p>
     </footer>
   )
 }

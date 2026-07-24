@@ -26,7 +26,7 @@ export function Gallery() {
             key={photo}
             type="button"
             onClick={() => setActive(i)}
-            className="aspect-3/4 overflow-hidden rounded-lg transition-transform active:scale-95"
+            className="aspect-3/4 overflow-hidden transition-transform active:scale-95"
           >
             <img src={photo} alt="" className="h-full w-full object-cover" />
           </button>
@@ -41,7 +41,7 @@ export function Gallery() {
           <img
             src={PHOTOS[active]}
             alt=""
-            className="max-h-[80vh] w-full max-w-[320px] rounded-xl object-cover"
+            className="max-h-[80vh] w-full max-w-[320px] object-cover"
             onClick={(e) => e.stopPropagation()}
           />
           <button
@@ -51,7 +51,7 @@ export function Gallery() {
               e.stopPropagation()
               show(-1)
             }}
-            className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-full bg-cream/90 text-ink"
+            className="absolute left-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-ink"
           >
             ‹
           </button>
@@ -62,7 +62,7 @@ export function Gallery() {
               e.stopPropagation()
               show(1)
             }}
-            className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full bg-cream/90 text-ink"
+            className="absolute right-4 flex h-10 w-10 items-center justify-center bg-cream/90 text-ink"
           >
             ›
           </button>
@@ -70,7 +70,7 @@ export function Gallery() {
             type="button"
             aria-label="닫기"
             onClick={close}
-            className="absolute top-6 right-6 flex h-9 w-9 items-center justify-center rounded-full bg-cream/90 text-ink"
+            className="absolute top-6 right-6 flex h-9 w-9 items-center justify-center bg-cream/90 text-ink"
           >
             ✕
           </button>

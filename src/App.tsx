@@ -12,7 +12,7 @@ import { ShareFooter } from './components/ShareFooter'
 function App() {
   return (
     <div className="min-h-screen bg-cream-deep py-0 sm:py-10">
-      <div className="mx-auto min-h-svh w-full max-w-[430px] bg-cream shadow-none sm:min-h-0 sm:rounded-3xl sm:shadow-xl">
+      <div className="mx-auto min-h-svh w-full max-w-[430px] bg-cream shadow-none sm:min-h-0 sm:shadow-xl">
         <Cover data={invitation} />
         <Greeting data={invitation} />
         <PhotoMoment caption="Our story continues together" />

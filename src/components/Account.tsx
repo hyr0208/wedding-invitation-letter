@@ -32,7 +32,7 @@ function AccountRow({ account }: { account: AccountInfo }) {
       <button
         type="button"
         onClick={handleCopy}
-        className="shrink-0 rounded-full border border-line px-3 py-1.5 text-xs text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
+        className="shrink-0 border border-line px-3 py-1.5 text-xs text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
       >
         {copied ? '복사됨' : '복사'}
       </button>
@@ -44,7 +44,7 @@ function AccountGroup({ side, accounts }: { side: string; accounts: AccountInfo[
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line">
+    <div className="overflow-hidden border border-line">
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}

@@ -30,7 +30,7 @@ export function Location({ data }: LocationProps) {
         <p className="text-[15px] font-medium text-ink">{data.venueName}</p>
         <p className="mt-1 text-sm text-ink-soft">{data.venueHall}</p>
 
-        <div className="mt-5 aspect-4/3 w-full rounded-xl border border-line bg-cream-soft" role="img" aria-label="예식장 위치 지도 영역">
+        <div className="mt-5 aspect-4/3 w-full border border-line bg-cream-soft" role="img" aria-label="예식장 위치 지도 영역">
           <div className="flex h-full flex-col items-center justify-center gap-1 text-ink-faint">
             <span className="text-xs">지도 영역 (샘플)</span>
           </div>
@@ -41,7 +41,7 @@ export function Location({ data }: LocationProps) {
           <button
             type="button"
             onClick={handleCopy}
-            className="shrink-0 rounded-full border border-line px-2.5 py-1 text-xs text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
+            className="shrink-0 border border-line px-2.5 py-1 text-xs text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
           >
             {copied ? '복사됨' : '주소 복사'}
           </button>
@@ -54,7 +54,7 @@ export function Location({ data }: LocationProps) {
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-line py-2.5 text-xs text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
+              className="border border-line py-2.5 text-xs text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
             >
               {link.label}
             </a>

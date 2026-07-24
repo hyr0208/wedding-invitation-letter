@@ -42,14 +42,14 @@ function PersonRow({ label, name, phone }: { label: string; name: string; phone:
         <a
           href={`tel:${phone}`}
           aria-label={`${name}에게 전화하기`}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
+          className="flex h-8 w-8 items-center justify-center border border-line text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
         >
           <ContactIcon type="call" />
         </a>
         <a
           href={`sms:${phone}`}
           aria-label={`${name}에게 문자 보내기`}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
+          className="flex h-8 w-8 items-center justify-center border border-line text-ink-soft transition-colors hover:border-terracotta hover:text-terracotta-dark"
         >
           <ContactIcon type="sms" />
         </a>
@@ -62,7 +62,7 @@ function CoupleCard({ person }: { person: PersonInfo }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <div className="rounded-2xl border border-line bg-cream px-5 py-4">
+    <div className="border border-line bg-cream px-5 py-4">
       <p className="font-serif-en text-[11px] tracking-[0.25em] text-terracotta uppercase">
         {person.role === '신랑' ? 'Groom' : 'Bride'}
       </p>
